@@ -111,7 +111,7 @@ show() -   the show () method, receives two parameters, the context and the list
 Now just run the Tutorial.show(context, itens)
 
 ```
-Tutorial.showTutorial(context, itens);
+Tutorial.showTutorial(context, itens, (index){} );
 ```
 
 # Good job now is so use.
