@@ -86,7 +86,7 @@ class Tutorial {
 
   static Offset? _capturePositionWidget(GlobalKey? key) {
     try{
-      RenderBox renderPosition = key?.currentContext?.findRenderObject() as RenderBox;
+      RenderBox? renderPosition = key?.currentContext?.findRenderObject() as RenderBox;
       return renderPosition.localToGlobal(Offset.zero);
     }catch(e){
       return null;
@@ -95,7 +95,7 @@ class Tutorial {
 
   static Size? _getSizeWidget(GlobalKey? key) {
     try{
-      RenderBox renderSize = key?.currentContext?.findRenderObject() as RenderBox;
+      RenderBox? renderSize = key?.currentContext?.findRenderObject() as RenderBox;
       return renderSize.size;
     }catch(e){
       return null;
