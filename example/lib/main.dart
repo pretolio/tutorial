@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:tutorial/tutorial.dart';
 
 main() {
@@ -105,7 +104,9 @@ class _HomeState extends State<Home> {
       ),
     });
     Future.delayed(Duration(microseconds: 200)).then((value) {
-      Tutorial.showTutorial(context, itens);
+      Tutorial.showTutorial(context, itens,(){
+
+      });
     });
 
     super.initState();
@@ -151,21 +152,6 @@ class _HomeState extends State<Home> {
       body: Stack(
         children: [
           Background(),
-          StaggeredGridView.countBuilder(
-            crossAxisCount: 2,
-            itemCount: list.length,
-            crossAxisSpacing: 2,
-            mainAxisSpacing: 2,
-            itemBuilder: (BuildContext context, int index) => new Container(
-              key: index == 0 ? keyContainer : null,
-              child: Image.asset(
-                list[index]["url"],
-                fit: BoxFit.cover,
-              ),
-            ),
-            staggeredTileBuilder: (int index) =>
-                new StaggeredTile.count(list[index]["x"], list[index]["y"]),
-          )
         ],
       ),
       drawer: Drawer(),
